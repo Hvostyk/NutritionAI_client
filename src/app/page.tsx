@@ -4,10 +4,6 @@ import { ThemeProvider } from "./providers/theme-provider";
 import Header from "@/widgets/header/ui/Header";
 export default function Home() {
   return (
-    <HeroUIProvider>
-        <ThemeProvider>
-          <Header/>
-        </ThemeProvider>
-    </HeroUIProvider>
+    <></>
   );
 }
