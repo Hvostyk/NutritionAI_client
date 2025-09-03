@@ -72,7 +72,7 @@ const Register: React.FC<IAuthProps> = ({ setSelected }) => {
                     className='cursor-pointer'
                     onPress={() => setSelected("login")}
                 >
-                    Зарегистрируйтесь
+                    Войдите
                 </Link>
 
             </p>

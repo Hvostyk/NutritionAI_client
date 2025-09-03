@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientProviders from "./providers/client-provider";
+import { AuthGuard } from "@/ processes/auth/AuthGuard";
+import StoreProvider from "./providers/store-provider";
 
 
 export const metadata: Metadata = {
@@ -16,10 +18,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ClientProviders>
-          {children}
-        </ClientProviders>
+        <StoreProvider>
+          <ClientProviders>
+            <AuthGuard>
+              {children}
+            </AuthGuard>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          </ClientProviders>
+        </StoreProvider>
       </body>
     </html>
   );
 }
+

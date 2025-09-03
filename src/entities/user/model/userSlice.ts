@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { User, UserProfile } from "./types";
 import { userApi } from "./userApi";
+import { RootState } from "@/shared/lib/redux";
 
 interface IInitialState {
     user: User | null;
@@ -46,3 +47,9 @@ const slice = createSlice({
 export const { logout, resetUser } = slice.actions
 
 export default slice.reducer
+
+export const selectisAuthenticated = (state: RootState) => state.user.isAuthenticated
+
+export const selectCurrent = (state: RootState) => state.user.current
+
+export const selectUser = (state: RootState) => state.user.user

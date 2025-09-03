@@ -6,8 +6,11 @@ import { Button, Link } from '@heroui/react'
 import { useLazyCurrentQuery, useLoginMutation } from '@/entities/user/model/userApi'
 import ErrorMessage from '@/features/error/ErrorMessage'
 import { hasErrorField } from '@/shared/lib/has-error-field'
+import { useRouter } from 'next/navigation'
 
 const Login: React.FC<IAuthProps> = ({ setSelected }) => {
+
+    const router = useRouter()
 
     const {
         handleSubmit,
@@ -26,6 +29,7 @@ const Login: React.FC<IAuthProps> = ({ setSelected }) => {
         try {
             await login(data).unwrap()
             await triggerCurrentQuery().unwrap()
+            router.push('/profile')
         } catch (error) {
             if (hasErrorField(error)) {
                 setError(error.data.error)
