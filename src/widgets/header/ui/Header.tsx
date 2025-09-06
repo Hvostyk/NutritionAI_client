@@ -40,17 +40,30 @@ export default function Header() {
 
                 <NavbarItem>
                         <Button
+                            size='md'
+                            variant='shadow'
+                            onPress={logoutHandler}
+                        >
+                            <span>
+                                Метрики
+                            </span>
+                        </Button>
+                </NavbarItem>
+
+                <NavbarItem>
+                        <Button
                             color='primary'
                             size='md'
                             variant='shadow'
                             onPress={logoutHandler}
                         >
-                            <CiLogout />
+                            <CiLogout/>
                             <span>
                                 Выйти
                             </span>
                         </Button>
                 </NavbarItem>
+
 
                 <NavbarItem className='lg:flex text-3xl cursor-pointer' onClick={toggleTheme}>
                     {theme === 'dark' ? <LuSunMedium /> : <FaRegMoon />}

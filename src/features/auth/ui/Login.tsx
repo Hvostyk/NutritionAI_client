@@ -41,6 +41,7 @@ const Login: React.FC<IAuthProps> = ({ setSelected }) => {
     const [login, { isLoading }] = useLoginMutation()
     const [error, setError] = useState('')
     const [triggerCurrentQuery] = useLazyCurrentQuery()
+    
     return (
         <form className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
             <Input

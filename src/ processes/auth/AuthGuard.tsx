@@ -4,7 +4,7 @@ import { useCurrentQuery } from '@/entities/user/model/userApi'
 import { selectCurrent, selectUser, selectisAuthenticated } from '@/entities/user/model/userSlice';
 import { Spinner } from '@heroui/react';
 import { useRouter } from 'next/navigation';
-import React, { JSX, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 
 export const AuthGuard = ({ children }: { children: React.ReactNode }) => {
@@ -12,8 +12,7 @@ export const AuthGuard = ({ children }: { children: React.ReactNode }) => {
     const router = useRouter()
     const {isLoading} = useCurrentQuery();
     const isAuthenticated = useSelector(selectisAuthenticated)
-    const user = useSelector(selectUser)
-    const currentUser = useSelector(selectCurrent)
+    
 
     useEffect(() => {
         if (!isLoading && !isAuthenticated) {

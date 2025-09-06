@@ -19,6 +19,13 @@ export const bodyMetricsApi = baseApi.injectEndpoints({
             })
         }),
 
+        getCurrentBodyMetrics: builder.query<BodyMetrics, void>({
+            query: () => ({
+                url: '/bodyMetrics/current',
+                method: "GET",
+            })
+        }),
+
         getAllBodyMetrics: builder.query<BodyMetrics[], void>({
             query: () => ({
                 url: '/bodyMetrics',
@@ -38,6 +45,8 @@ export const bodyMetricsApi = baseApi.injectEndpoints({
 export const {
     useCreateBodyMetricsMutation,
     useUpdateBodyMetricsMutation,
+    useGetCurrentBodyMetricsQuery,
+    useLazyGetCurrentBodyMetricsQuery,
     useGetAllBodyMetricsQuery,
     useLazyGetAllBodyMetricsQuery,
     useDeleteBodyMetricMutation,
